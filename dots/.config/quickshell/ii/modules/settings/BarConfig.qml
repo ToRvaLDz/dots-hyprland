@@ -252,6 +252,7 @@ ContentPage {
     }
 
     ContentSection {
+    ContentSection {
         icon: "cached" // or "update"
         title: Translation.tr("System Updates")
 
@@ -351,8 +352,6 @@ ContentPage {
             }
         }
     }
-
-    ContentSection {
         icon: "workspaces"
         title: Translation.tr("Workspaces")
 
