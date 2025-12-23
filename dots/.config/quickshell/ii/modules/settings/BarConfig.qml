@@ -252,6 +252,107 @@ ContentPage {
     }
 
     ContentSection {
+        icon: "cached" // or "update"
+        title: Translation.tr("System Updates")
+
+        ConfigSwitch {
+            buttonIcon: "check"
+            text: Translation.tr("Show in bar")
+            checked: Config.options.updates.showInBar
+            onCheckedChanged: {
+                Config.options.updates.showInBar = checked;
+            }
+        }
+
+        ConfigSpinBox {
+            icon: "notifications"
+            text: Translation.tr("Visibility Threshold")
+            value: Config.options.updates.notificationThreshold
+            from: 0
+            to: 1000
+            stepSize: 1
+            onValueChanged: {
+                Config.options.updates.notificationThreshold = value;
+            }
+        }
+
+        ContentSubsection {
+            title: Translation.tr("Package Manager")
+            Layout.fillWidth: true
+
+            ConfigSelectionArray {
+                currentValue: Config.options.updates.packageManager
+                onSelected: newValue => {
+                    Config.options.updates.packageManager = newValue;
+                }
+                options: [
+                    {
+                        displayName: "pacman",
+                        icon: "inventory_2",
+                        value: "pacman"
+                    },
+                    {
+                        displayName: "yay",
+                        icon: "cloud_download",
+                        value: "yay"
+                    },
+                    {
+                        displayName: "paru",
+                        icon: "cloud_download",
+                        value: "paru"
+                    }
+                ]
+            }
+        }
+    }
+
+    ContentSection {
+        icon: "currency_bitcoin"
+        title: Translation.tr("Crypto")
+
+        ConfigSwitch {
+            buttonIcon: "check"
+            text: Translation.tr("Enable")
+            checked: Config.options.bar.crypto.enable
+            onCheckedChanged: {
+                Config.options.bar.crypto.enable = checked;
+            }
+        }
+
+        ConfigRow {
+            MaterialTextField {
+                Layout.fillWidth: true
+                placeholderText: Translation.tr("CoinGecko IDs (comma separated, e.g. bitcoin,ethereum)")
+                text: Config.options.bar.crypto.coins.join(",")
+                onEditingFinished: {
+                    Config.options.bar.crypto.coins = text.split(",").map(s => s.trim()).filter(s => s !== "")
+                }
+            }
+        }
+
+        ConfigSwitch {
+            buttonIcon: "colors"
+            text: Translation.tr('Tint icons')
+            checked: Config.options.bar.crypto.monochromeIcon
+            onCheckedChanged: {
+                Config.options.bar.crypto.monochromeIcon = checked;
+            }
+        }
+
+        ConfigSpinBox {
+            icon: "update"
+            text: Translation.tr("Refresh Rate (min)")
+            value: Config.options.bar.crypto.refreshRate
+            from: 1
+            to: 60
+            stepSize: 1
+            onValueChanged: {
+                Config.options.bar.crypto.refreshRate = value;
+            }
+        }
+    }
+
+    ContentSection {
         icon: "workspaces"
         title: Translation.tr("Workspaces")
 
