@@ -148,9 +148,7 @@ Item { // Bar content region
             }
         }
 
-        VerticalBarSeparator {
-            visible: Config.options?.bar.borderless
-        }
+
 
         MouseArea {
             id: rightCenterGroup
@@ -176,6 +174,7 @@ Item { // Bar content region
                     visible: (Config.options.bar.verbose && root.useShortenedForm === 0)
                     Layout.alignment: Qt.AlignVCenter
                 }
+
 
                 BatteryIndicator {
                     visible: (root.useShortenedForm < 2 && Battery.available)
@@ -325,6 +324,37 @@ Item { // Bar content region
             Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+            }
+
+            // Crypto
+            Loader {
+                Layout.leftMargin: 4
+                active: Config.options.bar.crypto.enable
+
+                sourceComponent: Row {
+                    spacing: 4
+                    Repeater {
+                        model: Crypto.coinModel
+                        delegate: BarGroup {
+                            CryptoWidget {
+                                imageUrl: model.imageUrl
+                                symbol: model.symbol
+                                price: model.price
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Updates
+            Loader {
+                Layout.leftMargin: 4
+                active: Config.options.updates.showInBar && Updates.count >= Config.options.updates.notificationThreshold
+                visible: active
+                
+                sourceComponent: BarGroup {
+                    UpdatesButton {}
+                }
             }
 
             // Weather

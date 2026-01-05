@@ -282,6 +282,12 @@ Singleton {
                 property JsonObject tooltips: JsonObject {
                     property bool clickToShow: false
                 }
+                property JsonObject crypto: JsonObject {
+                    property bool enable: true
+                    property list<string> coins: ["bitcoin"]
+                    property bool monochromeIcon: false
+                    property int refreshRate: 5 // minutes
+                }
             }
 
             property JsonObject battery: JsonObject {
@@ -574,6 +580,9 @@ Singleton {
 
             property JsonObject updates: JsonObject {
                 property int checkInterval: 120 // minutes
+                property bool showInBar: true
+                property int notificationThreshold: 0 // packages
+                property string packageManager: "pacman" // "pacman", "yay", "paru"
                 property int adviseUpdateThreshold: 75 // packages
                 property int stronglyAdviseUpdateThreshold: 200 // packages
             }

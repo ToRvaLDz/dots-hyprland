@@ -281,6 +281,20 @@ Singleton {
             "key_get_description": Translation.tr("**Pricing**: free. Data used for training.\n\n**Instructions**: Log into Google account, allow AI Studio to create Google Cloud project or whatever it asks, go back and click Get API key"),
             "api_format": "gemini",
         }),
+        "gemini-3-pro-preview": aiModelComponent.createObject(this, {
+            "name": "Gemini 3 Pro Preview",
+            "icon": "google-gemini-symbolic",
+            "description": Translation.tr("Online | Google's model\nGoogle's latest state-of-the-art model (Preview)."),
+            "homepage": "https://aistudio.google.com",
+            "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:streamGenerateContent",
+            "model": "gemini-3-pro-preview",
+            "requires_key": true,
+            "key_id": "gemini",
+            "key_get_link": "https://aistudio.google.com/app/apikey",
+            "key_get_description": Translation.tr("**Pricing**: free. Data used for training.\n\n**Instructions**: Log into Google account, allow AI Studio to create Google Cloud project or whatever it asks, go back and click Get API key"),
+            "api_format": "gemini",
+        }),
+
         "mistral-medium-3": aiModelComponent.createObject(this, {
             "name": "Mistral Medium 3",
             "icon": "mistral-symbolic",
@@ -866,14 +880,19 @@ Singleton {
         blockLoading: true // Prevent race conditions
     }
 
+    FileView {
+        id: chatWriter
+    }
+
     /**
      * Saves chat to a JSON list of message objects.
      * @param chatName name of the chat
      */
     function saveChat(chatName) {
-        chatSaveFile.chatName = chatName.trim()
+        const filePath = `${Directories.aiChats}/${chatName.trim()}.json`
+        chatWriter.path = filePath
         const saveContent = JSON.stringify(root.chatToJson())
-        chatSaveFile.setText(saveContent)
+        chatWriter.setText(saveContent)
         getSavedChats.running = true;
     }
 
