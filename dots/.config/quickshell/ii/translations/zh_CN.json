@@ -718,5 +718,9 @@
   "No applications": "没有应用",
   "Creativity": "创意",
   "Move left": "左移",
-  "Pin to Start": "固定到“开始”屏幕"
+  "Pin to Start": "固定到“开始”屏幕",
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Clock": "Clock"
 }

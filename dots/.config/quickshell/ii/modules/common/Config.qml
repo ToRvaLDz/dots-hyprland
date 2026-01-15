@@ -273,6 +273,7 @@ Singleton {
                     property string city: "" // When 'enableGPS' is false
                     property bool useUSCS: false // Instead of metric (SI) units
                     property int fetchInterval: 10 // minutes
+                    property bool hideOnSmallScreens: true
                 }
                 property JsonObject indicators: JsonObject {
                     property JsonObject notifications: JsonObject {
@@ -281,6 +282,13 @@ Singleton {
                 }
                 property JsonObject tooltips: JsonObject {
                     property bool clickToShow: false
+                }
+                property JsonObject media: JsonObject {
+                    property bool hideOnSmallScreens: true
+                }
+                property JsonObject clock: JsonObject {
+                    property bool hideDateOnSmallScreens: true
+                    property bool hideOnSmallScreens: true
                 }
             }
 
