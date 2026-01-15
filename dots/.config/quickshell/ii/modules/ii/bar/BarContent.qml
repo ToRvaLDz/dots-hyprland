@@ -331,7 +331,7 @@ Item { // Bar content region
             // Crypto
             Loader {
                 Layout.leftMargin: 4
-                active: Config.options.bar.crypto.enable
+                active: Config.options.bar.crypto.enable && (!Config.options.bar.crypto.hideOnSmallScreens || (root.screen?.width >= 1920))
 
                 sourceComponent: Row {
                     spacing: 4

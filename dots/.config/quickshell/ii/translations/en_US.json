@@ -609,5 +609,6 @@
   "System Updates": "System Updates",
   "Package Manager": "Package Manager",
   "Show in bar": "Show in bar",
-  "Visibility Threshold": "Visibility Threshold"
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide on small screens"
 }

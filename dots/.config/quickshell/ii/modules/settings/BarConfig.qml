@@ -348,6 +348,15 @@ ContentPage {
             }
         }
 
+        ConfigSwitch {
+            buttonIcon: "visibility_off"
+            text: Translation.tr("Hide on small screens")
+            checked: Config.options.bar.crypto.hideOnSmallScreens
+            onCheckedChanged: {
+                Config.options.bar.crypto.hideOnSmallScreens = checked;
+            }
+        }
+
         ConfigRow {
             MaterialTextField {
                 Layout.fillWidth: true

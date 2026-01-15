@@ -364,5 +364,6 @@
   "System Updates": "Aggiornamenti di sistema",
   "Package Manager": "Gestore pacchetti",
   "Show in bar": "Mostra nella barra",
-  "Visibility Threshold": "Soglia di visibilità"
+  "Visibility Threshold": "Soglia di visibilità",
+  "Hide on small screens": "Nascondi se larghezza < 1920px"
 }

@@ -287,6 +287,7 @@ Singleton {
                     property list<string> coins: ["bitcoin"]
                     property bool monochromeIcon: false
                     property int refreshRate: 5 // minutes
+                    property bool hideOnSmallScreens: true
                 }
             }
 
