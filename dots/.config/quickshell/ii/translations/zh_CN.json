@@ -723,5 +723,7 @@
   "System Updates": "系统更新",
   "Package Manager": "包管理器",
   "Show in bar": "在栏中显示",
-  "Visibility Threshold": "可见性阈值"
-}
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Clock": "Clock",

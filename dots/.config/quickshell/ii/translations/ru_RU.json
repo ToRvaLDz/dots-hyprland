@@ -392,5 +392,8 @@
   "System Updates": "Системные обновления",
   "Package Manager": "Менеджер пакетов",
   "Show in bar": "Показывать в панели",
-  "Visibility Threshold": "Порог видимости"
-}
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Media": "Media",
+  "Clock": "Clock",

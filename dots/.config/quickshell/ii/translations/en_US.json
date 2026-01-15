@@ -610,5 +610,8 @@
   "Package Manager": "Package Manager",
   "Show in bar": "Show in bar",
   "Visibility Threshold": "Visibility Threshold",
-  "Hide on small screens": "Hide on small screens"
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Media": "Media",
+  "Clock": "Clock"
 }

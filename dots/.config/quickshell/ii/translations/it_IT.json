@@ -365,5 +365,8 @@
   "Package Manager": "Gestore pacchetti",
   "Show in bar": "Mostra nella barra",
   "Visibility Threshold": "Soglia di visibilità",
-  "Hide on small screens": "Nascondi se larghezza < 1920px"
+  "Hide on small screens": "Nascondi se risoluzione monitor < 1920px",
+  "Hide date on small screens": "Nascondi data se risoluzione monitor < 1920px",
+  "Media": "Media",
+  "Clock": "Orologio"
 }

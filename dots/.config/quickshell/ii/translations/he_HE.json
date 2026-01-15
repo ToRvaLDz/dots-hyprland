@@ -506,5 +506,8 @@
   "System Updates": "עדכוני מערכת",
   "Package Manager": "מנהל חבילות",
   "Show in bar": "הצג בסרגל",
-  "Visibility Threshold": "סף נראות"
-}
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Media": "Media",
+  "Clock": "Clock",

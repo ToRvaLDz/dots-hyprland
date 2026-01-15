@@ -433,5 +433,8 @@
   "System Updates": "システムアップデート",
   "Package Manager": "パッケージマネージャ",
   "Show in bar": "バーに表示",
-  "Visibility Threshold": "表示しきい値"
-}
+  "Visibility Threshold": "Visibility Threshold",
+  "Hide on small screens": "Hide if width < 1920px",
+  "Hide date on small screens": "Hide date if width < 1920px",
+  "Media": "Media",
+  "Clock": "Clock",

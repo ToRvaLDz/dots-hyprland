@@ -249,6 +249,48 @@ ContentPage {
                 Config.options.bar.weather.enable = checked;
             }
         }
+        ConfigSwitch {
+            buttonIcon: "visibility_off"
+            text: Translation.tr("Hide on small screens")
+            checked: Config.options.bar.weather.hideOnSmallScreens
+            onCheckedChanged: {
+                Config.options.bar.weather.hideOnSmallScreens = checked;
+            }
+        }
+    }
+
+    ContentSection {
+        icon: "music_note"
+        title: Translation.tr("Media")
+        ConfigSwitch {
+            buttonIcon: "visibility_off"
+            text: Translation.tr("Hide on small screens")
+            checked: Config.options.bar.media.hideOnSmallScreens
+            onCheckedChanged: {
+                Config.options.bar.media.hideOnSmallScreens = checked;
+            }
+        }
+    }
+
+    ContentSection {
+        icon: "schedule"
+        title: Translation.tr("Clock")
+        ConfigSwitch {
+            buttonIcon: "visibility_off"
+            text: Translation.tr("Hide date on small screens")
+            checked: Config.options.bar.clock.hideDateOnSmallScreens
+            onCheckedChanged: {
+                Config.options.bar.clock.hideDateOnSmallScreens = checked;
+            }
+        }
+        ConfigSwitch {
+            buttonIcon: "visibility_off"
+            text: Translation.tr("Hide on small screens")
+            checked: Config.options.bar.clock.hideOnSmallScreens
+            onCheckedChanged: {
+                Config.options.bar.clock.hideOnSmallScreens = checked;
+            }
+        }
     }
 
     ContentSection {

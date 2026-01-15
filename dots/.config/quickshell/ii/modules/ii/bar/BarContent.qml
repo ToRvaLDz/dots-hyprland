@@ -119,7 +119,7 @@ Item { // Bar content region
             }
 
             Media {
-                visible: root.useShortenedForm < 2
+                visible: root.useShortenedForm < 2 && (!Config.options.bar.media.hideOnSmallScreens || root.screen?.width >= 1920)
                 Layout.fillWidth: true
             }
         }
@@ -167,7 +167,8 @@ Item { // Bar content region
                 anchors.fill: parent
 
                 ClockWidget {
-                    showDate: (Config.options.bar.verbose && root.useShortenedForm < 2)
+                    visible: !Config.options.bar.clock.hideOnSmallScreens || root.screen?.width >= 1920
+                    showDate: (Config.options.bar.verbose && root.useShortenedForm < 2 && (!Config.options.bar.clock.hideDateOnSmallScreens || root.screen?.width >= 1920))
                     Layout.alignment: Qt.AlignVCenter
                     Layout.fillWidth: true
                 }
@@ -362,7 +363,7 @@ Item { // Bar content region
             // Weather
             Loader {
                 Layout.leftMargin: 4
-                active: Config.options.bar.weather.enable
+                active: Config.options.bar.weather.enable && (!Config.options.bar.weather.hideOnSmallScreens || root.screen?.width >= 1920)
 
                 sourceComponent: BarGroup {
                     WeatherBar {}
