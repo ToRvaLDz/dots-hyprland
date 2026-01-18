@@ -113,7 +113,7 @@ Variants {
 
                     if (width <= screenWidth || height <= screenHeight) {
                         // Undersized/perfectly sized wallpapers
-                        bgRoot.effectiveWallpaperScale = Math.max(screenWidth / width, screenHeight / height);
+                        bgRoot.effectiveWallpaperScale = bgRoot.preferredWallpaperScale;
                     } else {
                         // Oversized = can be zoomed for parallax, yay
                         bgRoot.effectiveWallpaperScale = Math.min(bgRoot.preferredWallpaperScale, width / screenWidth, height / screenHeight);
