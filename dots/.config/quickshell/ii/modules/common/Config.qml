@@ -588,6 +588,7 @@ Singleton {
             }
 
             property JsonObject updates: JsonObject {
+                property bool enableCheck: true
                 property int checkInterval: 120 // minutes
                 property bool showInBar: true
                 property int notificationThreshold: 0 // packages
